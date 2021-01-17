@@ -1,0 +1,13 @@
+sudo apt update
+sudo apt upgrade
+sudo apt remove -y vim-tiny
+sudo apt install -y vim
+sudo add-apt-repository ppa:git-core/ppa
+sudo apt update
+sudo apt upgrade
+sudo apt install -y git
+sudo apt install -y openjdk-11-jdk
+sudo sed -i "$ a JAVA_HOME=\"/usr/lib/jvm/java-11-openjdk-amd64\"" etc/environment
+sudo snap install vlc
+sudo snap install spotify
+sudo snap install chromium

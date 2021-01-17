@@ -1,0 +1,85 @@
+"""""""""""""""
+"" SO config ""
+"""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"" Windows
+""""""""""""
+set encoding=utf-8 " Sin esto Windows se vuelve loco con los simbolos como ▸ o ® al leer vimrc
+
+set shell=powershell "Al ejecutar :shell lanza powershell
+" set shellcmdflag=-command
+
+set backspace=indent,eol,start "Para que backspace borre en cualquier caso.
+" No estoy seguro si solo hace falta en Windows
+
+"" Linux
+""""""""""""
+" No need
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""
+"" Tabulaciones ""
+""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+set autoindent "La siguiente línea tiene el mismo indentado que la anterior
+set smartindent "Intenta adaptar la indentación a la sintaxis del archivo. Por ejemplo del lenguaje de programación. Tengo entendido que esta también activa autoindent pero no lo he probado
+" tabstop "Los tab ocupan X espacios. No se sustituyen por espacios
+" softtabstop
+" shiftwidth
+
+
+" Only do this part when compiled with support for autocommands
+if has("autocmd")
+  " Enable file type detection
+  filetype on
+
+  " Syntax of these languages is fussy over tabs Vs spaces
+  autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+  autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+  " Customisations based on house-style (arbitrary)
+  autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType xml setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
+  autocmd FileType java setlocal ts=4 sts=4 sw=4 noexpandtab
+
+  " Treat .rss files as XML
+  autocmd BufNewFile,BufRead *.rss setfiletype xml
+endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""
+"" Otros ""
+"""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Highlight
+syntax on
+
+" Archivos de recuperación
+set noswapfile
+"set nobackup
+
+" Columna de ayuda visual
+set colorcolumn=81
+
+" Numero de línea
+set number "Hace que aparezcan los números de línea
+set relativenumber "Hace que los números de línea sean relativos a tu posición
+
+" Caractres ocultos
+set list "Muestra los caracteres ocultos que figuren en listchars
+set listchars=tab:▸-,eol:$ "Ahora el tabulador se ve así	y el final de línea así
+
+" Search
+set incsearch "Conforme escribes va marcando los resultados de la búsqueda. No permanecen marcados
+
+" Copiar y pegar
+nnoremap ® "+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
