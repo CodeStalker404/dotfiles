@@ -35,10 +35,18 @@
             // Put settings here that you want to apply to all profiles.
             "cursorShape": "filledBox",
             "fontSize": 10,
-            "startingDirectory": "D:\\Javi\\Documents"
+            "startingDirectory": "D:\\Javi\\Proyectos"
         },
         "list":
         [
+            {
+                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+                "name": "PowerShell",
+                "source": "Windows.Terminal.PowershellCore",
+                "colorScheme": "AdventureTime",
+                "hidden": false,
+                "fontFace": "Cascadia Mono PL"
+            },
             {
                 // Make changes here to the powershell.exe profile.
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
